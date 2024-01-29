@@ -8,11 +8,11 @@ import (
 )
 
 type Config struct {
-	Mysql  Mysql
-	Redis  Redis
-	Server Server
-	Jwt    Jwt
-	Mongo  Mongo
+	Postgresql Postgresql
+	Redis      Redis
+	Server     Server
+	Jwt        Jwt
+	Mongo      Mongo
 }
 
 var EnvConfig *Config

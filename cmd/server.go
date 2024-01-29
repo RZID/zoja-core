@@ -3,8 +3,7 @@ package cmd
 import (
 	"go-gin-boilerplate/configs"
 	"go-gin-boilerplate/internal/pkg/logger"
-	"go-gin-boilerplate/internal/pkg/mysql"
-	"go-gin-boilerplate/internal/pkg/redis"
+	"go-gin-boilerplate/internal/pkg/postgresql"
 	"go-gin-boilerplate/internal/router"
 
 	"net/http"
@@ -51,9 +50,9 @@ func start() {
 	EnvConfig := configs.EnvConfig
 
 	// connect database
-	mysql.Connect(&EnvConfig.Mysql)
+	postgresql.Connect(&EnvConfig.Postgresql)
 	// connect redis
-	redis.Connect(&EnvConfig.Redis)
+	// redis.Connect(&EnvConfig.Redis)
 
 	// graceful shutdown
 	server := &http.Server{
